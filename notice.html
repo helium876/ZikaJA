@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ZikaJA</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Custom Fonts -->
+    <link href="css/notice.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="css/extra.css" rel="stylesheet">
+    <link href="css/modern-business.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body ng-app="Zika">
+
+    <!-- Navigation -->
+    <nav class="nav navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="img/logo.png" height="30px"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="form/">Check Your Self</a>
+                    </li>
+                    <li>
+                        <a href="info.html">Educate Your Self</a>
+                    </li>
+                    <li>
+                        <a href="notice.html">Notice board</a>
+                    </li>
+                    <li>
+                        <a href="report.html">Report</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <div class="container text-center">
+        <div class="row">
+                        <h2 class="section-heading">Notice Board</h2>
+                        <p class="section-subheading">Get Notified when your area is getting fumigated. Never get surprised again.</p>
+                  </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="container" ng-controller="Notify">
+          <div ng-repeat="(key, value) in stuff" class="container col-lg-6 notice-box">
+            <div class="box">
+              <div class="header"><a href="#">{{ value.area }}</a>
+                <div class="date">{{ value.time }}</div>
+              </div>
+              <div class="body">{{ value.msg }}</div>
+              <!-- <div class="links"><a href="#">Link</a></div>
+              <div class="footer">This is a Footer</div> -->
+            </div>
+          </div>
+          </div>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+     <script src="js/firebase.js"></script>
+    <!-- AngularJS -->
+    <script src="js/angular.min.js"></script>
+    <!-- AngularFire -->
+    <script src="js/angularfire.min.js"></script>
+
+    <script type="text/javascript" src="js/config.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+</body>
+
+</html>

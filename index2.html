@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<!--Head -->
+	<head>
+		<title>Hack Zika</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	</head>
+	<!-- Body -->
+	<body ng-app="Zika">
+	<div ng-controller="GetSurData" class="container">
+
+		<form ng-model="TData">
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">First Name</label>
+		    <input ng-model="TData.fname" type="text" class="form-control" id="exampleInputEmail1" placeholder="John">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Last Name</label>
+		    <input ng-model="TData.lname" type="text" class="form-control" id="exampleInputPassword1" placeholder="Doe">
+		  </div>
+		  <div class="checkbox">
+		    <label>
+		      <input ng-model="TData.sane" type="checkbox"> Are you insane?
+		    </label>
+		  </div>
+		  <button type="submit" class="btn btn-default" ng-click="SendData(TData);">Submit</button>
+		</form>
+
+		<div>
+			<h2>{{ TData.fname }}</h2>
+			<h2>{{ TData.lname }}</h2>
+			<h2>{{ TData.sane }}</h2>
+		</div>
+	</div>
+
+	
+	<div class="container" ng-controller="ListData">
+		<div>
+		<table class="table table-hover">
+            <thead>
+              <tr>
+                <th>First</th>
+                <th>Last</th>
+                <th>This Smaddy Mad?</th>
+              </tr>
+            </thead>
+            <tbody>
+			<tr ng-repeat="(key, value) in stuff">
+                <td>{{ value.fname }}</td>
+                <td>{{ value.lname }}</td>
+                <td>{{ value.sane }}</td>
+              </tr>
+		</div>
+	</div>
+
+
+	</body>
+	<!-- JS Resourses -->
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+
+	<!-- Bootstrap JS -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<!-- Firebase -->
+	<script src="js/firebase.js"></script>
+	<!-- AngularJS -->
+	<script src="js/angular.min.js"></script>
+	<!-- AngularFire -->
+	<script src="js/angularfire.min.js"></script>
+
+	<script type="text/javascript" src="js/config.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+
+	
+
+	
+	
+	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+</html>

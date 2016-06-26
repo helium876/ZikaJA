@@ -1,0 +1,39 @@
+<ion-view view-title="Vector Worker Form">
+  <ion-content>
+  <div class="container card">
+<form ng-model="Form2">
+    <div class="list">
+	  <label class="item item-input">
+	    <input type="text" placeholder="Address" ng-model="Form2.address">
+	  </label>
+	<!--   <label class="item item-input item-select">
+	    <div class="input-label">
+	      Parish
+	    </div>
+	    <select ng-model="Form2.parish">
+	      <option value="Kingston" selected>Kingston</option>
+	      <option value="St. Andrew">St. Andrew</option>
+	      <option value="St. Thomas">St. Thomas</option>
+	    </select>
+	  </label> -->
+	  <h4>Select if seen</h4>
+	  <ion-list>
+
+	  <ion-checkbox ng-model="Form2.item1">Uncovered Containers</ion-checkbox>
+	  <ion-checkbox ng-model="Form2.item2">Settling Water</ion-checkbox>
+	  <ion-checkbox ng-model="Form2.item3">Mosquito Larvae</ion-checkbox>
+	</ion-list>
+	  <label class="item item-input">
+	    <textarea ng-model="Form2.comments" placeholder="Comments"></textarea>
+	  </label>
+
+	  <div class="item item-button center">
+	    <button ng-click="SendData(Form2);" class="button button-positive">
+	     Submit
+	    </button>
+	</div>
+	</div>
+	</form>
+	</div>
+  </ion-content>
+</ion-view>

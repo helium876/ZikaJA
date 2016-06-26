@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <style type="text/css">
+        .container{
+          width: 90%;
+        }
+      </style>
+    </head>
+
+    <body ng-app="Zika">
+    <nav class="white">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><img src="img/logo.png" height="30px"></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Surveillance</a></li>
+        <li><a href="vector.html">Vector Control Reports</a></li>
+        <li><a href="home-reports.html">Home Reports</a></li>
+        <li><a href="grieve.html">Grievances</a></li>
+        <li><a href="notify.html">Announce Fogging</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="index.html">Surveillance</a></li>
+        <li><a href="vector.html">Vector Control Reports</a></li>
+        <li><a href="home-reports.html">Home Reports</a></li>
+        <li><a href="grieve.html">Grievances</a></li>
+        <li><a href="notify.html">Announce Fogging</a></li>
+      </ul>
+    </div>
+  </nav>
+<div class="container" ng-controller="ListVec">
+
+<div class="text-center">
+  <h2>Vector Control Reports</h2>
+</div>
+  
+
+
+
+  <!-- Report Cards -->
+  <div class="row">
+      <div ng-repeat="(key, value) in stuff" class="col s12 m6">
+        <div class="card-panel teal">
+         <div class="card-content white-text">
+            <h4>{{ value.address }}</h4>
+
+           <p> {{ value.comments }}</p>
+           <strong>Knowns Issues:</strong>
+           <p ng-if="value.item1">Uncovered Containers</p>
+           <p ng-if="value.item2">Settling Water</p>
+           <p ng-if="value.item3">Mosquito Larvae</p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/main.js"></script>
+        <script src="js/firebase.js"></script>
+  <!-- AngularJS -->
+  <script src="js/angular.min.js"></script>
+  <!-- AngularFire -->
+  <script src="js/angularfire.min.js"></script>
+
+  <script type="text/javascript" src="js/config.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+    </body>
+  </html>
