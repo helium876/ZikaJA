@@ -10,3 +10,23 @@ app.config(function() {
   };
   firebase.initializeApp(config);
 });
+
+// app.factory("Auth", ["$firebaseAuth",
+//   function($firebaseAuth) {
+//     var ref = new Firebase("https://hackzika-dc674.firebaseio.com");
+//     return $firebaseAuth(ref);
+//   }
+// ]);
+
+// app.factory("Auth", ["$firebaseAuth",
+//   function($firebaseAuth) {
+//     var ref = new Firebase("https://codesharks.firebaseio.com/");
+//     return $firebaseAuth(ref);
+//   }
+// ]);
+
+app.factory("Auth", ["$firebaseAuth",
+  function($firebaseAuth) {
+    return $firebaseAuth();
+  }
+]);
